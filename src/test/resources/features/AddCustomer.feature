@@ -1,10 +1,10 @@
-@hotel-booking1
+@hotel-booking
 Feature: Acceptance testing to validate add customer is working. 
   In order to validate that 
   hotel booking page is working
   Doing the Acceptance Testing
 
-  @hotel-booking-positive1
+  @hotel-booking-positive
   Scenario Outline: Validate add customer of hotel booking Page
     Given I am on the Home Page "http://hotel-test.equalexperts.io/" of booking Website 
     When I enter "<firstname>" firstname of customer
