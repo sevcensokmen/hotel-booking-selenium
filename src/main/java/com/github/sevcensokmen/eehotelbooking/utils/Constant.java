@@ -17,9 +17,6 @@ public class Constant {
 	public final static String CONFIG_PROPERTIES_DIRECTORY = PATH 
 			+ "/src/test/resources/properties/Config.properties";
 	
-	public final static String OR_PROPERTIES_DIRECTORY = PATH 
-			+ "/src/test/resources/properties/OR.properties";
-	
 	public final static String GECKO_DRIVER_DIRECTORY = PATH
 			+ "/src/test/resources/executables/geckodriver";
 

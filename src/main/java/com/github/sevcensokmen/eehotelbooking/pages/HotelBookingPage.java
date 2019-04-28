@@ -26,51 +26,52 @@ public class HotelBookingPage {
 
 	public void enterFirstName(String firstNameValue) {
 
-		SeleniumDriver.getDriver().findElement(By.id("firstname")).sendKeys(firstNameValue);
+		SeleniumDriver.getInstance().getDriver().findElement(By.id("firstname")).sendKeys(firstNameValue);
 
 	}
 
 	public void enterSurname(String lastnameValue) {
 
-		SeleniumDriver.getDriver().findElement(By.id("lastname")).sendKeys(lastnameValue);
+		SeleniumDriver.getInstance().getDriver().findElement(By.id("lastname")).sendKeys(lastnameValue);
 
 	}
 
 	public void enterTotalPrice(String totalpriceValue) {
 
-		SeleniumDriver.getDriver().findElement(By.id("totalprice")).sendKeys(totalpriceValue);
+		SeleniumDriver.getInstance().getDriver().findElement(By.id("totalprice")).sendKeys(totalpriceValue);
 
 	}
 
 	public void enterDeposit(String depositValue) {
 
-		Select selectDeposit = new Select(SeleniumDriver.getDriver().findElement(By.id("depositpaid")));
+		Select selectDeposit = new Select(SeleniumDriver.getInstance().getDriver().findElement(By.id("depositpaid")));
 		selectDeposit.selectByVisibleText(depositValue);
 
 	}
 
 	public void enterCheckIn(String checkinValue) {
 
-		SeleniumDriver.getDriver().findElement(By.id("checkin")).sendKeys(checkinValue);
+		SeleniumDriver.getInstance().getDriver().findElement(By.id("checkin")).sendKeys(checkinValue);
 
 	}
 
 	public void enterCheckOut(String checkoutValue) {
 
-		SeleniumDriver.getDriver().findElement(By.id("checkout")).sendKeys(checkoutValue);
+		SeleniumDriver.getInstance().getDriver().findElement(By.id("checkout")).sendKeys(checkoutValue);
 
 	}
 
 	public void clickSaveBtn() {
 		numberOfBookings = bookings().size();
-		SeleniumDriver.getDriver().findElement(By.xpath("//input[contains(@value,'Save')]")).click();
+		SeleniumDriver.getInstance().getDriver().findElement(By.xpath("//input[contains(@value,'Save')]")).click();
 
 	}
 
 	public void waitUntilNewBookingPopulates(WebElement bookingTable) {
 
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(SeleniumDriver.getDriver()).withTimeout(30, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.MILLISECONDS).ignoring(NoSuchElementException.class);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(SeleniumDriver.getInstance().getDriver())
+				.withTimeout(30, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.MILLISECONDS)
+				.ignoring(NoSuchElementException.class);
 
 		WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver driver) {
@@ -87,7 +88,8 @@ public class HotelBookingPage {
 	}
 
 	private List<WebElement> bookings() {
-		return SeleniumDriver.getDriver().findElements(By.xpath("//div[@id='bookings']/div[@class='row']"));
+		return SeleniumDriver.getInstance().getDriver()
+				.findElements(By.xpath("//div[@id='bookings']/div[@class='row']"));
 	}
 
 	public void deleteCustomer() {
@@ -96,7 +98,7 @@ public class HotelBookingPage {
 		List<WebElement> rows = bookings();
 		if (rows.size() > 1) {
 			lastid = rows.get(rows.size() - 1).getAttribute("id");
-			WebElement element2 = SeleniumDriver.getDriver()
+			WebElement element2 = SeleniumDriver.getInstance().getDriver()
 					.findElement(By.xpath("//div[@id='" + lastid + "']//input[@value='Delete']"));
 
 			element2.click();
@@ -117,10 +119,10 @@ public class HotelBookingPage {
 		return false;
 	}
 
-
 	public boolean waitUntilNewBookingPopulatesa() {
 
-		WebElement bookingTable = SeleniumDriver.getDriver().findElement(By.xpath("//div[@id='bookings']"));
+		WebElement bookingTable = SeleniumDriver.getInstance().getDriver()
+				.findElement(By.xpath("//div[@id='bookings']"));
 
 		try {
 			new FluentWait<WebElement>(bookingTable).withTimeout(60, TimeUnit.SECONDS)
