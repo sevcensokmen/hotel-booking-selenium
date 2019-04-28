@@ -1,8 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.sevcensokmen.eehotelbooking</groupId>
-  <artifactId>eehotelbooking</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.sevcensokmen.eehotelbooking</groupId>
+	<artifactId>eehotelbooking</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 
@@ -35,14 +37,12 @@
 		</dependency>
 
 
-		<!-- http://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>3.8.1</version>
+			<artifactId>selenium-java</artifactId>
+			<version>3.5.2</version>
 		</dependency>
 
-	
 
 
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
@@ -51,18 +51,18 @@
 			<artifactId>cucumber-testng</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-<dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>16.0.1</version>
-</dependency>
-		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>22.0</version>
+		</dependency>
+
 
 
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 
@@ -86,9 +86,9 @@
 
 
 		</plugins>
-		
-		</build>
 
-	
+	</build>
+
+
 
 </project>
