@@ -23,8 +23,8 @@ public class AddCustomerSteps {
 
 	@When("^I enter \"([^\"]*)\" firstname of customer$")
 	public void i_enter_firstname_of_customer(String firstNameValue) throws Throwable {
-		SeleniumDriver.waitForPageToLoad();
-		hotelBookingPage.enterFirstName(firstNameValue); 
+		SeleniumDriver.getInstance().waitForPageToLoad();
+		hotelBookingPage.enterFirstName(firstNameValue);
 
 	}
 
@@ -43,10 +43,10 @@ public class AddCustomerSteps {
 	public void select_deposit_from_selection_dropdown(String depositValue) throws Throwable {
 		hotelBookingPage.enterDeposit(depositValue);
 
-	} 
+	}
 
 	@And("^enter \"([^\"]*)\" checkin date of booking$")
-	public void enter_checkin_date_of_booking(String checkinDate) throws Throwable { 
+	public void enter_checkin_date_of_booking(String checkinDate) throws Throwable {
 		hotelBookingPage.enterCheckIn(checkinDate);
 
 	}
@@ -64,7 +64,7 @@ public class AddCustomerSteps {
 
 	@Then("^I should see new booking on the booking list\\.$")
 	public void i_should_see_new_booking_on_the_booking_list() throws Throwable {
-		SeleniumDriver.waitForPageToLoad();
+		SeleniumDriver.getInstance().waitForPageToLoad();
 		Assert.assertTrue(hotelBookingPage.waitUntilNewBookingPopulatesa());
 	}
 
